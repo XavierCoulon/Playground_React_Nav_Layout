@@ -1,8 +1,7 @@
 import React, { Fragment } from "react";
-import { menuLinks } from "../../config/menuLinks";
-import MenuLink from "./MenuLink";
+import { Link } from "react-router-dom";
 
-function Menu({ setCurrentPage, isMenuActive }) {
+function Menu({ isMenuActive }) {
   return (
     <Fragment>
       <div
@@ -12,14 +11,24 @@ function Menu({ setCurrentPage, isMenuActive }) {
         }
       >
         <ul>
-          {menuLinks.map((menuLink) => (
-            <MenuLink
-              id={menuLink.id}
-              name={menuLink.name}
-              path={menuLink.path}
-              setCurrentPage={setCurrentPage}
-            />
-          ))}
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/favorites">Favorites</Link>
+          </li>
+          <li>
+            <Link to="/playlists">Playlists</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
+          </li>
+          <li>
+            <Link to="/uploads">Uploads</Link>
+          </li>
+          <li>
+            <Link to="/genres">Genres</Link>
+          </li>
         </ul>
       </div>
     </Fragment>
